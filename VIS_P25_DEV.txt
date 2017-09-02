@@ -1,0 +1,244 @@
+device_name              device_type                           device_description
+nch                      MOSFET(LV) CMOS                       2.5V Nominal NMOS
+pch                      MOSFET(LV) CMOS                       2.5V Nominal PMOS
+nch5                     MOSFET(LV) CMOS                       5V Nominal NMOS
+pch5                     MOSFET(LV) CMOS                       5V Nominal PMOS
+nch5_lvt                 MOSFET(LV) CMOS                       5V Low VT NMOS
+pch5_lvt                 MOSFET(LV) CMOS                       5V Low VT PMOS
+pch5_hvt                 MOSFET(LV) CMOS                       5V High VT PMOS
+nchi2                    MOSFET(LV) ISO CMOS(HVNW2)            2.5V ISO NMOS(NBL)
+pchi2                    MOSFET(LV) ISO CMOS(HVNW2)            2.5V ISO PMOS(NBL)
+nchi5                    MOSFET(LV) ISO CMOS(HVNW2)            5V ISO NMOS(NBL)
+pchi5                    MOSFET(LV) ISO CMOS(HVNW2)            5V ISO PMOS(NBL)
+nchi5_lvt                MOSFET(LV) ISO CMOS(HVNW2)            5V ISO Low VT NMOS(NBL)
+pchi5_lvt                MOSFET(LV) ISO CMOS(HVNW2)            5V ISO Low VT PMOS(NBL) 
+pchi5_hvt                MOSFET(LV) ISO CMOS(HVNW2)            5V ISO High VT PMOS(NBL)
+nchi5_zvt                MOSFET(LV) ISO CMOS(HVNW2)            5V ISO Zero VT NMOS(NBL)
+nchi5_dep                MOSFET(LV) ISO CMOS(HVNW2)            5V ISO Depletion NMOS(NBL)
+nchi2_2                  MOSFET(LV) ISO CMOS(NW)               2.5V ISO NMOS(DHVNW)
+pchi2_2                  MOSFET(LV) ISO CMOS(NW)               2.5V ISO PMOS(DHVNW)
+nchi5_2                  MOSFET(LV) ISO CMOS(NW)               5V ISO NMOS(DHVNW)
+pchi5_2                  MOSFET(LV) ISO CMOS(NW)               5V ISO PMOS(DHVNW)
+nchi2_3                  MOSFET(LV) ISO CMOS(HVNW)             2.5V ISO NMOS(NBL)
+pchi2_3                  MOSFET(LV) ISO CMOS(HVNW)             2.5V ISO PMOS(NBL)
+nchi5_3                  MOSFET(LV) ISO CMOS(HVNW)             5V ISO NMOS(NBL)
+pchi5_3                  MOSFET(LV) ISO CMOS(HVNW)             5V ISO PMOS(NBL)
+nchi5_3_lvt              MOSFET(LV) ISO CMOS(HVNW)             5V ISO Low VT NMOS(NBL)
+pchi5_3_lvt              MOSFET(LV) ISO CMOS(HVNW)             5V ISO Low VT PMOS(NBL) 
+pchi5_3_hvt              MOSFET(LV) ISO CMOS(HVNW)             5V ISO High VT PMOS(NBL)
+nchi5_3_zvt              MOSFET(LV) ISO CMOS(HVNW)             5V ISO Zero VT NMOS(NBL)
+nchi5_3_dep              MOSFET(LV) ISO CMOS(HVNW)             5V ISO Depletion NMOS(NBL)
+lnch2                    MOSFET(LV) Native                     2.5V Native NMOS
+lnch5                    MOSFET(LV) Native                     5V Native NMOS
+an5g12d1w                HVMOSFET(HVNW) Switch N(HPSD)         12V NMOS(Fixed Lch)
+an5g12d2w                HVMOSFET(HVNW) Switch N(HPSD)         12V Double Isolated NMOS(Fixed Lch)
+an5g20d1w                HVMOSFET(HVNW) Switch N(HPSD)         20V NMOS(Fixed Lch)
+an5g20d2w                HVMOSFET(HVNW) Switch N(HPSD)         20V Double Isolated NMOS(Fixed Lch)
+an5g30d1w                HVMOSFET(HVNW) Switch N(HPSD)         30V NMOS(Fixed Lch)
+an5g40d1w                HVMOSFET(HVNW) Switch N(HPSD)         40V NMOS(Fixed Lch)
+an5g60d3w                HVMOSFET(HVNW) Switch N(HPSD)         60V NMOS(Fixed Lch)
+an5g12d1c                HVMOSFET(HVNW) Control N(PW)          12V NMOS(Scalable Lch)
+an5g12d2c                HVMOSFET(HVNW) Control N(PW)          12V Double Isolated NMOS(Scalable Lch)
+an5g20d1c                HVMOSFET(HVNW) Control N(PW)          20V NMOS(Scalable Lch)
+an5g20d2c                HVMOSFET(HVNW) Control N(PW)          20V Double Isolated NMOS(Scalable Lch)
+an5g30d1c                HVMOSFET(HVNW) Control N(PW)          30V NMOS(Scalable Lch)
+an5g40d1c                HVMOSFET(HVNW) Control N(PW)          40V NMOS(Scalable Lch)
+an5g60d3c                HVMOSFET(HVNW) Control N(PW)          60V NMOS(Scalable Lch, Vs=40V)
+an5g60d4c                HVMOSFET(HVNW) Control N(PW)          60V NMOS(Scalable Lch, Vs=60V)
+an5g40d2d                HVMOSFET(HVNW) Depletion              40V NMOS(Scalable Lch)
+ap5g12d1w                HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   12V PMOS(Fixed Lch, 3T)
+ap5g20d1w                HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   20V PMOS(Fixed Lch, 3T)
+ap5g20d2w                HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   20V Self-Protected PMOS(Fixed Lch,3T)
+ap5g30d1w                HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   30V PMOS(Fixed Lch, 3T)
+ap5g30d2w                HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   30V Self-Protected PMOS(Fixed Lch,3T)
+ap5g12d1w_bi             HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   12V PMOS(Fixed Lch, 4T)
+ap5g20d1w_bi             HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   20V PMOS(Fixed Lch, 4T)
+ap5g30d1w_bi             HVMOSFET(HVNW) Switch P(HNSD,DHVNW)   30V PMOS(Fixed Lch, 4T)
+ap5g12d1c                HVMOSFET(HVNW) Control P(NW,DHVNW)    12V PMOS(Scalable Lch, 3T)
+ap5g20d1c                HVMOSFET(HVNW) Control P(NW,DHVNW)    20V PMOS(Scalable Lch, 3T)
+ap5g30d1c                HVMOSFET(HVNW) Control P(NW,DHVNW)    30V PMOS(Scalable Lch, 3T)
+ap5g12d1c_bi             HVMOSFET(HVNW) Control P(NW,DHVNW)    12V PMOS(Scalable Lch, 4T)
+ap5g20d1c_bi             HVMOSFET(HVNW) Control P(NW,DHVNW)    20V PMOS(Scalable Lch, 4T)
+ap5g30d1c_bi             HVMOSFET(HVNW) Control P(NW,DHVNW)    30V PMOS(Scalable Lch, 4T)
+ap5g40d1                 HVMOSFET(HVNW) PMOS(NW,NBL)           40V PMOS(Scalable Lch, 3T)
+ap5g60d2                 HVMOSFET(HVNW) PMOS(NW,NBL)           60V PMOS(Scalable Lch, 3T)
+ap5g60d4                 HVMOSFET(HVNW) PMOS(NW,NBL)           60V Self-Protected PMOS(Scalable Lch, 3T)
+ap5g40d1_sb              HVMOSFET(HVNW) PMOS(NW,NBL)           40V PMOS(Scalable Lch, 4T)
+ap5g60d2_sb              HVMOSFET(HVNW) PMOS(NW,NBL)           60V PMOS(Scalable Lch, 4T)
+an5g50d1w                HVMOSFET(HVNW2) Switch N(Pbody)       50V NMOS(Scalable Lch, Vs=60V)
+an5g50d2w                HVMOSFET(HVNW2) Switch N(Pbody)       50V NMOS(Scalable Lch, Vs=40V)
+an5g60d1w                HVMOSFET(HVNW2) Switch N(Pbody)       60V NMOS(Scalable Lch, Vs=60V)
+an5g60d2w                HVMOSFET(HVNW2) Switch N(Pbody)       60V NMOS(Scalable Lch, Vs=40V)
+an5g80d2w                HVMOSFET(HVNW2) Switch N(Pbody)       80V NMOS(Scalable Lch, Vs=40V)
+an5g50d1c                HVMOSFET(HVNW2) Control N(Pbody)      50V NMOS(Scalable Lch, Vs=60V)
+an5g50d2c                HVMOSFET(HVNW2) Control N(Pbody)      50V NMOS(Scalable Lch, Vs=40V)
+an5g60d1c                HVMOSFET(HVNW2) Control N(Pbody)      60V NMOS(Scalable Lch, Vs=60V)
+an5g60d2c                HVMOSFET(HVNW2) Control N(Pbody)      60V NMOS(Scalable Lch, Vs=40V)
+an5g80d1c                HVMOSFET(HVNW2) Control N(Pbody)      80V NMOS(Scalable Lch, Vs=60V)
+ap5g50d1                 HVMOSFET(HVNW2) PMOS(NW,NBL)          50V PMOS(Scalable Lch, 3T)
+ap5g50d2                 HVMOSFET(HVNW2) PMOS(NW,NBL)          50V Self-Protected PMOS(Scalable Lch, 3T)
+ap5g60d1                 HVMOSFET(HVNW2) PMOS(NW,NBL)          60V PMOS(Scalable Lch, 3T)
+ap5g60d3                 HVMOSFET(HVNW2) PMOS(NW,NBL)          60V Self-Protected PMOS(Scalable Lch, 3T)
+ap5g70d1                 HVMOSFET(HVNW2) PMOS(NW,NBL)          70V Self-Protected PMOS(Scalable Lch, 3T)
+ap5g80d1                 HVMOSFET(HVNW2) PMOS(NW,NBL)          80V PMOS(Scalable Lch, 3T)
+ap5g80d2                 HVMOSFET(HVNW2) PMOS(NW,NBL)          80V Self-Protected PMOS(Scalable Lch, 3T)
+ap5g50d1_sb              HVMOSFET(HVNW2) PMOS(NW,NBL)          50V PMOS(Scalable Lch, 4T)
+ap5g60d1_sb              HVMOSFET(HVNW2) PMOS(NW,NBL)          60V PMOS(Scalable Lch, 4T)
+ap5g80d1_sb              HVMOSFET(HVNW2) PMOS(NW,NBL)          80V PMOS(Scalable Lch, 4T)
+an5g60d1d                HVMOSFET(HVNW2) Depletion             60V NMOS(Scalable Lch)
+an5g80d1d                HVMOSFET(HVNW2) Depletion             80V NMOS(Scalable Lch)
+npn10_hdnw               LV BJT                                2.5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+npn5_hdnw                LV BJT                                2.5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+npn2_hdnw                LV BJT                                2.5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+npn105_hdnw              LV BJT                                5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+npn55_hdnw               LV BJT                                5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+npn25_hdnw               LV BJT                                5V(OX) N+/PW/DHVNW Vertical NPN Bipolar
+pnp10                    LV BJT                                2.5V(OX) P+/NW/Psub Vertical PNP Bipolar
+pnp5                     LV BJT                                2.5V(OX) P+/NW/Psub Vertical PNP Bipolar
+pnp2                     LV BJT                                2.5V(OX) P+/NW/Psub Vertical PNP Bipolar
+pnp105                   LV BJT                                5V(OX) P+/NW/Psub Vertical PNP Bipolar
+pnp55                    LV BJT                                5V(OX) P+/NW/Psub Vertical PNP Bipolar
+pnp25                    LV BJT                                5V(OX) P+/NW/Psub Vertical PNP Bipolar
+hnpn3a                   HV BJT(HVNW)                          HVNDDD/HVPW+PW/NBL+HVNW Vertical NPN Bipolar
+hpnp3a                   HV BJT(HVNW)                          PW/HVNW/Psub+HVPW Vertical PNP Bipolar
+lpnp4a                   HV BJT(HVNW)                          PW/NW+HVNW/PW Lateral PNP Bipolar
+lpnp5a                   HV BJT(HVNW)                          PW+HVPDDD/NW+HVNW/PW+HVPW Lateral PNP Bipolar
+lpnp6a                   HV BJT(HVNW)                          PW/NW+HVNW/PW+HVPW Lateral PNP Bipolar
+hnpn1a                   HV BJT(HVNW2)                         HVNDDD/HVPW+Pbody/NBL+HVNW2 Vertical NPN Bipolar
+hnpn1a_2                 HV BJT(HVNW2)                         HVNDDD/HVPW+Pbody/NBL+HVNW2 Vertical NPN Bipolar
+hpnp1a                   HV BJT(HVNW2)                         Pbody/HVNW2/Psub+HVPW Vertical PNP Bipolar
+hpnp1a_2                 HV BJT(HVNW2)                         Pbody/HVNW2/Psub+HVPW Vertical PNP Bipolar
+hpnp2a                   HV BJT(HVNW2)                         P+/NW/HVPW/NBL+HVNW2 ISO Vertical PNP Bipolar
+lpnp1a                   HV BJT(HVNW2)                         Pbody/NW+HVNW2/Pbody Lateral PNP Bipolar
+hpnp2a                   HV BJT(HVNW2)                         Pbody+HVPDDD/NW+HVNW2/Pbody+HVPW Lateral PNP Bipolar
+hpnp2a_2                 HV BJT(HVNW2)                         Pbody+HVPDDD/NW+HVNW2/Pbody+HVPW Lateral PNP Bipolar
+sdio4                    Schottky Diode(HVNW)                  60V Schottky Diode(Pbody/HVNW)
+sdio2                    Schottky Diode(HVNW)                  40V Schottky Diode(PDDD/HVNW)
+sdio5                    Schottky Diode(HVNW)                  40V Schottky Diode(Pbody/HVNW+NBL)
+sdio3                    Schottky Diode(HVNW)                  30V Schottky Diode(PW/HVNW)
+sdio6                    Schottky Diode(HVNW)                  30V Schottky Diode(PDDD/HVNW+NBL)
+sdio1                    Schottky Diode(HVNW2)                 60V Schottky Diode(Pbody/HVNW2)
+sdio7                    Schottky Diode(HVNW2)                 40V Schottky Diode(Pbody/HVNW2+NBL)
+sdio11                   Schottky Diode(HVNW+HVNW2)            30V Schottky Diode
+sdio12                   Schottky Diode(HVNW+HVNW2)            40V Schottky Diode
+dio_30d1                 PN Diode(HVNW2)                       30V Power Diode(HVNDD/HVPW/HVNW2+NBL) 
+hdio5_2                  Diode Zener(HVNW)                     5V Dide(DIO/HVNW)
+hdio5                    Diode Zener(HVNW2)                    5V Diode(DIO/HVNW2)
+hdio5a                   Diode Zener(HVNW2)                    5V Diode(DIO/HVNW2+NBL)
+hdio7p8                  Diode Zener(HVNW2)                    7.8V Diode(Pbody/HVNW2)
+hdio7p8a                 Diode Zener(HVNW2)                    7.8V Diode(Pbody/HVNW2+NBL)
+ndio                     Diode DIO                             2.5V(OX) N+/PW
+pdio                     Diode DIO                             2.5V(OX) P+/NW
+nwdio                    Diode DIO                             NW/Psub
+ndio5                    Diode DIO                             5V(OX) N+/PW
+pdio5                    Diode DIO                             5V(OX) P+/NW
+ESD12V_1                 ESD HVESD                             12V HVESD
+ESD12V_2                 ESD HVESD                             12V HVESD
+ESD20V_2                 ESD HVESD                             20V HVESD
+ESD20V_3                 ESD HVESD                             20V HVESD
+ESD20V_4                 ESD HVESD                             20V HVESD
+ESD30V_2                 ESD HVESD                             30V HVESD
+ESD30V_3                 ESD HVESD                             30V HVESD
+ESD30V_4                 ESD HVESD                             30V HVESD
+ESD30V_5                 ESD HVESD                             30V HVESD
+ESD40V_1                 ESD HVESD                             40V HVESD
+ESD40V_2                 ESD HVESD                             40V HVESD
+ESD40V_4                 ESD HVESD                             40V HVESD
+ESD40V_6                 ESD HVESD                             40V HVESD
+ESD50V_1                 ESD HVESD                             50V HVESD
+ESD50V_2                 ESD HVESD                             50V HVESD
+ESD50V_4                 ESD HVESD                             50V HVESD
+ESD60V_1                 ESD HVESD                             60V HVESD
+ESD60V_2                 ESD HVESD                             60V HVESD
+ESD60V_4                 ESD HVESD                             60V HVESD
+ESD80V_1                 ESD HVESD                             80V HVESD
+ESD80V_4                 ESD HVESD                             80V HVESD
+ESD80V_5                 ESD HVESD                             80V HVESD
+ESD80V_6                 ESD HVESD                             80V HVESD
+ESD2V                    ESD LVESD                             2.5V Gate-Couple NMOS ESD(3-T)
+ESD2VP                   ESD LVESD                             2.5V Gate-Couple PMOS ESD(3-T)
+ESD5V                    ESD LVESD                             5V Gate-Couple NMOS ESD(3-T)
+ESD5VP                   ESD LVESD                             5V Gate-Couple PMOS ESD(3-T)
+ESD5V_Nimp               ESD LVESD                             5V Gate-Couple NMOS ESD with ESD_N implant(3-T)
+ESD5V_Pimp               ESD LVESD                             5V Gate-Couple PMOS ESD with ESD_P implant(3-T)
+ESD5V_RMNLDD             ESD LVESD                             5V Gate-Couple NMOS ESD remove NLDD(3-T)
+nch5_rpo                 Special MOSFET 5V CMOS                5V NMOS ESD Rule(4-T)
+nch5_esdn                Special MOSFET 5V CMOS                5V NMOS ESD_N implant(4-T)
+pch5_rpo                 Special MOSFET 5V CMOS                5V PMOS ESD Rule(4-T)
+nchi5_rpo                Special MOSFET 5V ISO CMOS(HVNW2)     5V Iso-NMOS(NBL) with ESD Rule(5-T)
+nchi5_esdn               Special MOSFET 5V ISO CMOS(HVNW2)     5V Iso-NMOS(NBL) with ESD_N implant(5-T)
+pchi5_rpo                Special MOSFET 5V ISO CMOS(HVNW2)     5V Iso-PMOS(NBL) with ESD Rule(4-T)
+nchi5_2rpo               Special MOSFET 5V ISO CMOS(NW)        5V Iso-NMOS(DHVNW) with ESD Rule(5-T)
+nchi5_2esdn              Special MOSFET 5V ISO CMOS(NW)        5V Iso-NMOS(DHVNW) with ESD_N implant(5-T)
+pchi5_2rpo               Special MOSFET 5V ISO CMOS(NW)        5V Iso-PMOS(DHVNW) with ESD Rule(4-T)
+nchi5_3rpo               Special MOSFET 5V ISO CMOS(HVNW)      5V Iso-NMOS(NBL) with ESD Rule(5-T)
+nchi5_3esdn              Special MOSFET 5V ISO CMOS(HVNW)      5V Iso-NMOS(NBL) with ESD_N implant(5-T)
+pchi5_3rpo               Special MOSFET 5V ISO CMOS(HVNW)      5V Iso-PMOS(NBL) with ESD Rule(4-T)
+mim23_cap380             Capacitor                             MiM 380A
+mim34_cap380             Capacitor                             MiM 380A
+mim45_cap380             Capacitor                             MiM 380A
+mim23_cap230             Capacitor                             MiM 230A
+mim34_cap230             Capacitor                             MiM 230A
+mim45_cap230             Capacitor                             MiM 230A
+nch5_cap                 Capacitor                             5V NMOS Capacitor
+pch5_cap                 Capacitor                             5V PMOS Capacitor
+pchi5_cap                Capacitor                             5V PMOS Capacitor
+pchi5_cap_3t             Capacitor                             5V PMOS Capacitor(3T)  
+pchi5_cap_2              Capacitor                             5V PMOS Capacitor
+pchi5_cap_2_3t           Capacitor                             5V PMOS Capacitor(3T)   
+rnod                     Resistor                              N+ diff. w/i Silicide(W<2.0um)
+rnod_ac                  Resistor                              N+ diff. w/i Silicide(W<2.0um, 3T)
+rpod                     Resistor                              P+ diff. w/i Silicide(W<2.0um)
+rpod_ac                  Resistor                              P+ diff. w/i Silicide(W<2.0um, 3T)
+rnodw                    Resistor                              N+ diff. w/i Silicide(W>=2.0um)
+rnodw_ac                 Resistor                              N+ diff. w/i Silicide(W>=2.0um, 3T)
+rpodw                    Resistor                              P+ diff. w/i Silicide(W>=2.0um)
+rpodw_ac                 Resistor                              P+ diff. w/i Silicide(W>=2.0um, 3T)
+rnodrpo                  Resistor                              N+ diff. w/o Silicide
+rnodrpo_ac               Resistor                              N+ diff. w/o Silicide(3T)
+rpodrpo                  Resistor                              P+ diff. w/o Silicide
+rpodrpo_ac               Resistor                              P+ diff. w/o Silicide(3T)
+rnwsti                   Resistor                              NW diffusion(Under STI)
+rnwsti_ac                Resistor                              NW diffusion(Under STI, 3T)
+rnwod                    Resistor                              NW diffusion(Under OD)
+rnwod_ac                 Resistor                              NW diffusion(Under OD, 3T)
+rlpp400rpo               Resistor                              LPP resistor w/o silicide(400ohm/sq,W>=2,0um)
+rlpp400rpo_ac            Resistor                              LPP resistor w/o silicide(400ohm/sq,W>=2,0um, 3T)
+rlpp400rpo_narrow        Resistor                              LPP resistor w/o silicide(400ohm/sq,0.6um<=W<2.0um)
+rlpp400rpo_narrow_ac     Resistor                              LPP resistor w/o silicide(400ohm/sq,0.6um<=W<2.0um, 3T)
+rlpp1500rpo              Resistor                              LPP resistor w/o silicide(1.5kohm/sq,W>=2.0um)
+rlpp1500rpo_ac           Resistor                              LPP resistor w/o silicide(1.5kohm/sq,W>=2,0um, 3T)
+rlpp1500rpo_narrow       Resistor                              LPP resistor w/o silicide(1.5kohm/sq,0.6um<=W<2.0um)
+rlpp1500rpo_narrow_ac    Resistor                              LPP resistor w/o silicide(1.5kohm/sq,0.6um<=W<2.0um, 3T)
+rlpp2000rpo              Resistor                              LPP resistor w/o silicide(2.0kohm/sq,W>=2.0um)
+rlpp2000rpo_ac           Resistor                              LPP resistor w/o silicide(2.0kohm/sq,W>=2.0um, 3T)
+rlpp2000rpo_narrow       Resistor                              LPP resistor w/o silicide(2.0kohm/sq,0.6um<=W<2.0um)
+rlpp2000rpo_narrow_ac    Resistor                              LPP resistor w/o silicide(2.0kohm/sq,0.6um<=W<2.0um, 3T)
+rppo1rpo                 Resistor                              P+ Poly w/o Silicide(W>=2.0um)
+rppo1rpo_ac              Resistor                              P+ Poly w/o Silicide(W>=2.0um, 3T)
+rppo1w                   Resistor                              P+ Poly w/i Silicide(W>=2.0um)
+rppo1w_ac                Resistor                              P+ Poly w/i Silicide(W>=2.0um, 3T)
+rppo1                    Resistor                              P+ Poly w/i Silicide(W<2.0um)
+rppo1_ac                 Resistor                              P+ Poly w/i Silicide(W<2.0um, 3T)
+rnpo1rpo                 Resistor                              N+ Poly w/o Silicide(W>=2.0um)
+rnpo1rpo_ac              Resistor                              N+ Poly w/o Silicide(W>=2.0um, 3T)
+rnpo1w                   Resistor                              N+ Poly w/i Silicide(W>=2.0um)
+rnpo1w_ac                Resistor                              N+ Poly w/i Silicide(W>=2.0um, 3T)
+rnpo1                    Resistor                              N+ Poly w/i Silicide(W<2.0um)
+rnpo1_ac                 Resistor                              N+ Poly w/i Silicide(W<2.0um, 3T)
+rnrpoesd                 Resistor                              N+ diff. w/i ESD implant w/o silicide
+rnrpoesd_ac              Resistor                              N+ diff. w/i ESD implant w/o silicide(3T)
+rm1                      Resistor                              M1 Resisitor
+rm2                      Resistor                              M2 Resisitor
+rm3                      Resistor                              M3 Resisitor
+rm4                      Resistor                              M4 Resisitor
+rm5                      Resistor                              M5 Resisitor
+rtm_30k                  Resistor                              M5 Resistor_30K
+rmtop                    Resistor                              Top Metal Resisitor_8K  
+rmtop_30k                Resistor                              Top Metal Resisitor_30K                      
+rmd_80k                  Resistor                              CuRDL MD Resistor(80k) 
+seal_ring                Accessory                             Seal Ring for top metal AlCu 0.8u
+seal_ring_tm30k          Accessory                             Seal Ring for thick top metal AlCu 3.0u
+wbpad                    Accessory                             Standard bonding PAD
+cup_pad_Copper           Accessory                             Circuit Under PAD(Cu wire-bond)
+rdl_pad_int              Accessory                             RDL PAD for interconnect
