@@ -20,7 +20,7 @@
 #include <string.h>
 #include <sys/stat.h>
 
-void remove_file(char* path, char* file); 
+void remove_file(char* path, char* file);
 void path2file(char* path);
 void get_list(FILE* ff, const char* devicelist);
 int read_file(FILE* fd, FILE* fn, FILE* fp);
@@ -36,135 +36,149 @@ const char RETURN = '\n';
 // temprory file name
 const char *FULL = "fulldevicelist.temp";
 const char *DEVICE = "devicelist.temp";
-const char *DB = "VIS_P25_DEV.txt";  // change this directory for specific libraray
+const char *DB = "/home/schen/utilities/VIS_P25_DEV.txt";  // change this directory for specific libraray
 static int max_length = 0;
 int main(int argc, char* argv[])
 {
     FILE *ff,*fn,*fp, *fd;
     char path[200];
     char file[200];
-    int command = 0;
+    char fn_name[200];
+    char fd_name[200];
+    char fp_name[200];
+    int count = 0;
+    int flag = 0;
+    char command;
     char input[20];
-    // get input:
-    printf(" --------------- Project Device Utitly ----------------\n");
-    printf("| 1) Generate Full Device List                         |\n");
-    printf("| 2) Generate Project Device List                      |\n");
-    printf(" ------------------------------------------------------\n");
-    printf("| 3) Clean the Locks                                   |\n");
-    printf("| 4) Clean the temp file                               |\n");
-    printf(" ------------------------------------------------------\n");
-    printf("Enter the utility number: ");
-    scanf("%d", &command);
-    printf("=======================================================\n");
-    switch (command)
+    while (1) 
     {
-        case 1:
-            printf("Generate Full Device List\n");
-            printf("Please input full device list path: ");
-            scanf("%s", path);
-            ff = fopen(path, "r");
-            // check if successfully open the file
-            if (ff == NULL)
-            {
-                perror("The Full Device List File Does Not Exist\n");
-                return -1;
-            }
-            // check the full device list is file or directory
-            if (is_file(path) == 0)
-            {
-                printf("Input is path.\n");
+        system("clear");
+        // get input:
+        printf(" --------------- Project Device Utitly ----------------\n");
+        printf("| 1) Generate Full Device List                         |\n");
+        printf("| 2) Generate Project Device List                      |\n");
+        printf("| 3) Display Full Device List                          |\n");
+        printf("| 4) Display Project Device List                       |\n");
+        printf(" ------------------------------------------------------\n");
+        printf("| 5) Clean the Locks                                   |\n");
+        printf("| 6) Clean the temp file                               |\n");
+        printf(" ------------------------------------------------------\n");
+        printf("| q) Press q to quit the utility                       |\n");
+        printf(" ------------------------------------------------------\n");
+        printf("Enter the utility number: ");
+        scanf("%c", &command);
+        printf("=======================================================\n");
+        switch (command)
+        {
+            case '1':
+                printf("Generate Full Device List\n");
+                printf("Please input full device list path: ");
+                scanf("%s", path);
+                ff = fopen(path, "r");
+                // check if successfully open the file
+                if (ff == NULL)
+                {
+                    perror("The Full Device List File Does Not Exist\n");
+                    return -1;
+                }
+                // check the full device list is file or directory
+                if (is_file(path) == 0)
+                {
+                    fclose(ff);
+                    path2file(path);
+                    ff = fopen(FULL, "r");
+                }
+                printf("Output file name: ");
+                scanf("%s", fd_name);
+                get_list(ff, fd_name);
+                flag = 1;
                 fclose(ff);
-                path2file(path);
-                ff = fopen(FULL, "r");
-            }
-            else
-            {
-                printf("Input is file.\n");
-            }
-            printf("Output file name: ");
-            scanf("%s", file);
-            get_list(ff, file);
-            fclose(ff);
-            printf("Do you want to display the list?(y/n): ");
-            scanf("%s",input);
-            if (input[0] == 'y')
-            {
-                display(file, 1);
-            }
-            break;
-        case 2:
-            printf("Generate Project Device List\n");
-            printf("Please input full device list path: ");
-            scanf("%s", path);
-            // check if successfully open the file
-            ff = fopen(path, "r");
-            if (ff == NULL)
-            {
-                perror("The Full Device List File Does Not Exist\n");
-                return -1;
-            }
+                printf("Full Device List Generated.\n");
+                break;
+            case '2':
+                printf("Generate Project Device List\n");     
+                if (flag == 0) 
+                { 
+                    printf("Please input full device list path: ");
+                    scanf("%s", path);
+                    ff = fopen(path, "r");
+                    // check if successfully open the file
+                    if (ff == NULL)
+                    {
+                    perror("The Full Device List File Does Not Exist\n");
+                    return -1;
+                    }
                     // check the full device list is file or directory
-            if (is_file(path) == 0)
-            {
-                printf("Input is path.\n");
-                fclose(ff);
-                path2file(path);
-                ff = fopen(FULL, "r");
-            }
-            else
-            {
-                printf("Input is file.\n");
-            }
-            get_list(ff, DEVICE);
-            fd = fopen(DEVICE, "r");
-            fclose(ff);
-            printf("Please input netlist file path: ");
-            scanf("%s", file);
-            fn = fopen(file, "r");
-            printf("Please input project list file path: ");
-            scanf("%s", file);
-            fp = fopen(file, "w");
-            if (fn == NULL)
-            {
-                perror("The Netlist List File Does Not Exist");
+                    if (is_file(path) == 0)
+                    {
+                        fclose(ff);
+                        path2file(path);
+                        ff = fopen(FULL, "r");
+                    }
+                    get_list(ff, DEVICE);
+                    fd = fopen(DEVICE, "r");  
+                    fclose(ff);
+                } else fd = fopen(fd_name, "r");
+                printf("Please input netlist file path: ");
+                scanf("%s", fn_name);
+                fn = fopen(fn_name, "r");
+                printf("Please input project list file path: ");
+                scanf("%s", fp_name);
+                fp = fopen(fp_name, "w");
+                if (fn == NULL)
+                {
+                    perror("The Netlist List File Does Not Exist");
+                    return -1;
+                }
+                // check if project list file opened successfully
+                if (fp == NULL)
+                {
+                    perror("The Output Path Does Not Exist");
+                    return -1;
+                }
+                int flag = read_file(fd, fn, fp);
+                if (flag == -1) return -1;
+                else if (flag == 1) count = 1;
+                else count = 3;
+                // close the opened file
+                fclose(fd);
+                fclose(fn);
+                fclose(fp);
+                break;
+            case '3':
+                display(fd_name, 1);
+                break;
+            case '4':
+                if (count <= 0) 
+                {
+                   printf("Can't display project list file\n");
+                   return -1;
+                }
+                display(fp_name, count);
+                break;               
+            case '5':
+                printf("Clean all locks(*.cdslck).\n");
+                printf("Please enter the library full path: ");
+                scanf("%s", path);
+                remove_file(path, "*.cdslck");
+                break;
+            case '6':
+                printf("Clean all temp file.\n");
+                printf("Please enter the file suffix (format: *.suffix): ");
+                scanf("%s", file);
+                printf("Please enter the full path: ");
+                scanf("%s", path);
+                remove_file(path, file);
+                break;
+            case 'q':
+                printf("exit the utility.\n"); 
+                return 0; 
+            default:
+                printf("Wrong command!\n");
                 return -1;
-            }
-            // check if project list file opened successfully
-            if (fp == NULL)
-            {
-                perror("The Output Path Does Not Exist");
-                return -1;
-            }
-            if (read_file(fd, fn, fp)== -1) return -1;	// get device list
-            // close the opened file
-            fclose(fd);
-            fclose(fn);
-            fclose(fp);
-            printf("Do you want to display the list?(y/n): ");
-            scanf("%s",input);
-            if (input[0] == 'y')
-            {
-                display(file, 3);
-            }
-            break;
-        case 3:
-            printf("Clean all locks(*.cdslck).\n");
-            printf("Please enter the library full path: ");
-            scanf("%s", path);
-            remove_file(path, "*.cdslck");
-            break;
-        case 4:
-            printf("Clean all temp file.\n");
-            printf("Please enter the full path: ");
-            scanf("%s", path);
-            break;
-        default:
-            printf("Clean all temp file");
-            printf("Wrong command!\n");
-            return -1;
         }
-        
-    
+        getchar();
+    }   
     return 0;
 }
 
@@ -181,6 +195,8 @@ void get_list(FILE* ff, const char* devicelist)
     int len = 0;
     int flag = 0;
     int label = 1;
+    fprintf(fd, "Device Name\n");
+    fprintf(fd, "------------------------------\n");
     while (fgets(buffer, sizeof(buffer), ff) != NULL)
     {
         count = 0;
@@ -225,22 +241,47 @@ int read_file(FILE* fd, FILE* fn, FILE* fp)
     char line[300];   // string buffer
     char device[100]; // device name
     char word[100];   // netlist words
-    char c;
-    int i = 0;
+    char c;           // current character
+    int i = 0;        // index
+    int flag = 0;     // flag to show whether we need to show description.
+    int label = 1;
+    FILE *fb;
     fseek(fn, 0, SEEK_END);
     f_size = ftell(fn);
     printf("Generating list...\n");
     printf("-------------------------------------------------------\n");
-    if (f_size > 5000)
+    if (f_size > 5000000)
         printf ("The file is too big, please wait for couple of minutes.\n");
     int device_exist = 0; // device exist flag
-    FILE *fb = fopen(DB, "r");
-    if (fb == NULL) 
+    printf("Do you want to add device descripition to the list? (y/n)");
+    scanf("%s", line);
+    if (line[0] != 'y') flag = 1;
+    if (flag == 0) 
     {
-        perror("can't open description file.");
-        return -1;
+        fb = fopen(DB, "r");
+        if (fb == NULL)
+        {
+            perror("can't find description file.\n");
+            return -1;
+        }
     }
-    if (fgets(line, sizeof(line), fb) != NULL) fprintf(fp, "%s", line);
+    if (flag == 0) 
+    {
+        if (fgets(line, sizeof(line), fb) != NULL)
+        {
+            fprintf(fp, "%s", line);
+            fprintf(fp, "-----------------------------------------------------------------------------------------\n");
+        } else 
+        {
+            printf("Can't find descriptions in file.\n");
+            flag = 1;
+        }   
+    }else 
+    {
+        fprintf(fp, "Device_Name\n------------------------\n");
+    }
+    fgets(device, sizeof(device), fd);  // skip the first two line
+    fgets(device, sizeof(device), fd);  
     while (fgets(device, sizeof(device), fd) != NULL)
     {
         device_exist = 0;
@@ -280,14 +321,21 @@ int read_file(FILE* fd, FILE* fn, FILE* fp)
         } while (c != EOF);
         if (device_exist == 1)
         {
-            fseek(fb, 0, SEEK_SET);
-            fgets(line, sizeof(line), fb);
-            get_desc(fb, fp, device);
+            if (flag == 0) 
+            {
+                fseek(fb, 0, SEEK_SET);
+                fgets(line, sizeof(line), fb);
+                get_desc(fb, fp, device);
+            }
+            else 
+           {
+                fprintf(fp, "%d. %s\n", label++, device);                   
+           }
         }
     }
-    fclose(fb);
+    if (flag == 0) fclose(fb);
     printf("list genreated!\n");
-    return 0;
+    return flag;
 }
 
 // compare the device name and word in netlist
@@ -384,12 +432,14 @@ void display(char* file, int cols)
     int flag = 0;
     if (cols == 1)
     {
+        fgets(line, sizeof(line), f);
         pivot1 = 40;
         printf(" ---------------------------------------\n");
-        printf("| device name                           |\n");
+        printf("| Device Name                           |\n");
         printf(" ---------------------------------------\n");
         while (fgets(line, sizeof(line), f) != NULL)
         {
+            if(line[0] == '-') continue;
             len = strlen(line);
             line[len - 1] = EOS;
             printf("| %s", line);
@@ -403,11 +453,12 @@ void display(char* file, int cols)
     }
     if (cols == 3)
     {
-        printf(" ");
-        for (i = 0; i < max_length + 2; i++) printf("-");
-        printf("\n");
         if (fgets(line, sizeof(line), f) != NULL)
         {
+            if (max_length < strlen(line)) max_length = strlen(line);
+            printf(" ");
+            for (i = 0; i <= max_length + 2; i++) printf("-");
+            printf("\n");
             for (i = 0; i < strlen(line); i++)
             {
                 if (line[i] == ' ')
@@ -426,13 +477,14 @@ void display(char* file, int cols)
         }
         fseek(f, 0, SEEK_SET);
         while (fgets(line, sizeof(line), f) != NULL)
-        {
-            printf("| ");
-            strncpy(word, line, pivot1);
-            word[pivot1 - 1] = EOS;
-            printf("%s", word);
-            printf("| ");
-            if (pivot2 > pivot1) {
+        {    
+            if(line[0] == '-') continue;
+            if (pivot2 < strlen(line)) {
+                printf("| ");
+                strncpy(word, line, pivot1);
+                word[pivot1 - 1] = EOS;
+                printf("%s", word);
+                printf("| ");
                 strncpy(word, line + pivot1, pivot2 - pivot1);
                 word[pivot2 - pivot1] = EOS;
                 printf("%s", word);
@@ -440,26 +492,28 @@ void display(char* file, int cols)
                 strncpy(word, line + pivot2, strlen(line) - pivot2 - 1);
                 word[strlen(line) - pivot2 - 1] = EOS;
                 printf("%s", word);
-                
+                for (i = strlen(line); i < max_length; i++) printf(" ");
             } else
             {
-                strncpy(word, line + pivot1, strlen(line) - pivot1 - 1);
-                word[strlen(line) - pivot1 - 1] = EOS;
-                printf("%s", word);
+                //strncpy(word, line + pivot1, strlen(line) - pivot1 - 1);
+                //word[strlen(line) - pivot1 - 1] = EOS;
+                line[strlen(line) - 1] = ' ';
+                printf("| %s", line);
+                for (i = strlen(line); i < max_length + 2; i++) printf(" ");
             }
-            for (i = strlen(line); i < max_length - 1; i++) printf(" ");
             printf("|\n");
             printf(" ");
-            for (i = 0; i < max_length + 2; i++) printf("-");
+            for (i = 0; i <= max_length+2; i++) printf("-");
             printf("\n");
         }
     }
     fclose(f);
 }
 
-// romve specific file in the directory 
-void remove_file(char* path, char* file) 
+// romve specific file in the directory
+void remove_file(char* path, char* file)
 {
+    char confirm[20];
     char line[300];
     strcpy(line, "find ");
     int len = strlen(path);
@@ -469,9 +523,14 @@ void remove_file(char* path, char* file)
     }
     strcat(line, path);
     strcat(line, " -name ");
-    strcat(line, "\"");    
+    strcat(line, "\"");
     strcat(line, file);
-    strcat(line, "\" -type f -delete");
+    strcat(line, "\" -type f");
     system(line);
-    printf("Clean completed.\n");    
+    printf("Are you sure you want to delete these files?(y/n) ");
+    scanf("%s", confirm);
+    if (confirm[0] != 'y') return;
+    strcat(line, " -delete");
+    system(line);
+    printf("Clean completed.\n");
 }
