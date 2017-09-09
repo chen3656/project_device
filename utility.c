@@ -49,7 +49,6 @@ int main(int argc, char* argv[])
     int count = 0;
     int flag = 0;
     char command;
-    char input[20];
     while (1) 
     {
         system("clear");
@@ -94,6 +93,7 @@ int main(int argc, char* argv[])
                 flag = 1;
                 fclose(ff);
                 printf("Full Device List Generated.\n");
+                getchar();
                 break;
             case '2':
                 printf("Generate Project Device List\n");     
@@ -144,6 +144,7 @@ int main(int argc, char* argv[])
                 fclose(fd);
                 fclose(fn);
                 fclose(fp);
+                getchar();
                 break;
             case '3':
                 display(fd_name, 1);
@@ -164,7 +165,7 @@ int main(int argc, char* argv[])
                 break;
             case '6':
                 printf("Clean all temp file.\n");
-                printf("Please enter the file suffix (format: *.suffix): ");
+                printf("Please enter the file extension (format: *.extension) ");
                 scanf("%s", file);
                 printf("Please enter the full path: ");
                 scanf("%s", path);
@@ -177,6 +178,7 @@ int main(int argc, char* argv[])
                 printf("Wrong command!\n");
                 return -1;
         }
+        printf("Press Enter to continue");
         getchar();
     }   
     return 0;
@@ -262,12 +264,9 @@ int read_file(FILE* fd, FILE* fn, FILE* fp)
         if (fb == NULL)
         {
             perror("can't find description file.\n");
-            return -1;
+            flag = 1;
         }
-    }
-    if (flag == 0) 
-    {
-        if (fgets(line, sizeof(line), fb) != NULL)
+        else if (fgets(line, sizeof(line), fb) != NULL)
         {
             fprintf(fp, "%s", line);
             fprintf(fp, "-----------------------------------------------------------------------------------------\n");
@@ -276,7 +275,8 @@ int read_file(FILE* fd, FILE* fn, FILE* fp)
             printf("Can't find descriptions in file.\n");
             flag = 1;
         }   
-    }else 
+    }
+    if (flag == 1) 
     {
         fprintf(fp, "Device_Name\n------------------------\n");
     }
@@ -421,15 +421,22 @@ int is_file(char* path)
 // display the list
 void display(char* file, int cols)
 {
+    getchar();
     char line[300];
     char word[100];
     FILE *f = fopen(file, "r");
+    if (f == NULL) 
+    {
+        perror("Cannot display the list");
+        return;
+    }
     int pivot1 = 0;
     int pivot2 = 0;
     int len = 0;
     int i = 0;
     int count = 0; // pivot count
     int flag = 0;
+    int row = 0;
     if (cols == 1)
     {
         fgets(line, sizeof(line), f);
@@ -439,6 +446,12 @@ void display(char* file, int cols)
         printf(" ---------------------------------------\n");
         while (fgets(line, sizeof(line), f) != NULL)
         {
+            if (row > 50) 
+            {
+                row = 0;
+                printf("Press Enter to show more\n");
+                getchar();
+            }
             if(line[0] == '-') continue;
             len = strlen(line);
             line[len - 1] = EOS;
@@ -449,6 +462,7 @@ void display(char* file, int cols)
             }
             printf("|\n");
             printf(" ---------------------------------------\n");
+            row++;
         }
     }
     if (cols == 3)
@@ -477,7 +491,14 @@ void display(char* file, int cols)
         }
         fseek(f, 0, SEEK_SET);
         while (fgets(line, sizeof(line), f) != NULL)
-        {    
+        {   
+            if (row > 50)
+            {
+                row = 0;
+                printf("Press Enter to show more\n");
+                getchar();
+            }
+ 
             if(line[0] == '-') continue;
             if (pivot2 < strlen(line)) {
                 printf("| ");
@@ -505,6 +526,7 @@ void display(char* file, int cols)
             printf(" ");
             for (i = 0; i <= max_length+2; i++) printf("-");
             printf("\n");
+            row++;
         }
     }
     fclose(f);
@@ -529,8 +551,13 @@ void remove_file(char* path, char* file)
     system(line);
     printf("Are you sure you want to delete these files?(y/n) ");
     scanf("%s", confirm);
-    if (confirm[0] != 'y') return;
+    if (confirm[0] != 'y') 
+    {   
+        getchar();
+        return;
+    }
     strcat(line, " -delete");
     system(line);
     printf("Clean completed.\n");
+    getchar();
 }
